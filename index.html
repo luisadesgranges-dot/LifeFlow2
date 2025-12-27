@@ -24,7 +24,15 @@
       background: #cbd5e1;
       border-radius: 10px;
     }
+    /* Previne flash de tela branca antes do carregamento do Tailwind */
+    #root {
+      min-height: 100vh;
+    }
   </style>
+  <script>
+    // Segurança para ambientes de deploy onde process.env pode não estar definido globalmente
+    window.process = window.process || { env: { API_KEY: "" } };
+  </script>
 <script type="importmap">
 {
   "imports": {
